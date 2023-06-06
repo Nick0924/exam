@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript" src="assets/scrip.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+
+        <div class="left">
+            <div class="icon">
+                <p><a href="index.html" style="color: #FBF5F3;">Noodle</a><span><img style="width: 30px; height: 30px;" src="https://cdn-icons-png.flaticon.com/512/3814/3814390.png" alt=""></span></p>
+            </div>
+            <div class="list">
+                <hr style="text-align: center;">
+                <a href="index.html">熱銷商品</a>
+                <a href="p-kr.html">韓國泡麵</a>
+                <a href="p-jp.html">日本泡麵</a>
+                <a href="p-sea.html">東南亞泡麵</a>
+                <a href="p-tw.html">台灣泡麵</a>
+                <a href="login.html">會員登入&註冊</a>
+                <a href="">購物須知</a>
+            </div>
+        </div>
+
+        <div class="right">
+            <div id="main" class="page active">
+                <div class="adv">
+                    <div class="container">
+                        <div class="slide fade">
+                            <img src="img/AD/TW.ad3.png">
+                            <div class="text"></div>
+                        </div>
+                        <div class="slide fade">
+                            <img src="img/AD/kR.ad2.png">
+                            <div class="text"></div>
+                        </div>
+                        <div class="slide fade">
+                            <img src="img/AD/SEA.ad1.png">
+                            <div class="text"></div>
+                        </div>
+                        <div class="slide fade">
+                            <img src="img/AD/SEA.ad2.png">
+                            <div class="text"></div>
+                        </div>
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <span class="dot" onclick="showSlides(1)"></span>
+                        <span class="dot" onclick="showSlides(2)"></span>
+                        <span class="dot" onclick="showSlides(3)"></span>
+                        <span class="dot" onclick="showSlides(4)"></span>
+                    </div>
+                    
+                </div>
+                <div class="com">
+                    <label for=""><a href=""><img src="img/JP/000001_1478259551.jpg"><p>【日本創意一品】醬油拉麵(88gx5P)<br>$12</p></a> </label>
+                    <label for=""><a href=""><img src="img/KR/000001_1573719792.png"><p>韓國不倒翁 起司風味乾拌杯麵 (55g)<br>$12</p></a></label>
+                    <label for=""><a href=""><img src="img/SEA/000001_1579079857.jpg"><p>養養 香濃酸辣蝦味麵350g<br>$12</p></a></label>
+                    <label for=""><a href=""><img src="img/TW/000001_1589276665.jpg"><p>維力一度贊 紅燒牛肉(3包/袋)<br>$12</p></a></label>
+                    <label for=""><a href=""><img src="img/KR/000001_1576813452.png"><p>韓國不倒翁Q拉麵(純麵條)5入<br>$12</p></a></label>
+                    <label for=""><a href=""><img src="img/JP/000001_1478259556.jpg"><p>【日本創意一品】鹽味拉麵(89gx5P)<br>$12</p></a></label>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <hr style="height: 3px; background-color: black;">
+                <div style="width: 200px; margin: 20px auto; text-align: center;">
+                    <p style=" font-size: 20px;">Follow Noodle</p>
+                    <a href="" ><img src="img/174855.png" alt="" style="width: 30px; height: 30px;"></a>
+                    <a href="" ><img src="img/2989993.png" alt="" style="width: 30px; height: 30px;"></a>
+                    <a href="" ><img src="img/4701482.png" alt="" style="width: 30px; height: 30px;"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // 監聽超連結的點擊事件
+        var links = document.querySelectorAll('a[data-page]');
+        for (var i = 0; i < links.length; i++) {
+          links[i].addEventListener('click', function(e) {
+            e.preventDefault(); // 防止超連結跳轉
+    
+            var target = this.getAttribute('href'); // 取得目標頁面的ID
+            var pages = document.querySelectorAll('.page');
+    
+            // 移除所有頁面的 active 類別
+            for (var j = 0; j < pages.length; j++) {
+              pages[j].classList.remove('active');
+            }
+    
+            // 添加目標頁面的 active 類別
+            document.querySelector(target).classList.add('active');
+          });
+        }
+      </script>
+</body>
+</html>
